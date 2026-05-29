@@ -620,7 +620,7 @@
             <div class="hero-meta">
                 <div>Estatus Global: <strong>Repositorio Activo</strong></div>
                 <div>Jurisdicción: <strong>Corporate / Compliance</strong></div>
-                <div>Última Entrada: <strong>Pendiente de Carga</strong></div>
+                <div>Última Entrada: <strong>Mayo, 2026</strong></div>
             </div>
         </div>
     </header>
@@ -652,6 +652,20 @@
                     </thead>
                     <tbody id="table-body">
                         
+                        <!-- REGISTRO ACTIVO 01: Patrimonio Familiar -->
+                        <tr>
+                            <td class="doc-id">DOC-01</td>
+                            <td>Protección de Patrimonio Familiar corporativo</td>
+                            <td>29/05/2026</td>
+                            <td>Medio</td>
+                            <td><span class="badge-status active">Vigente / En Carpeta</span></td>
+                            <td style="text-align: right;">
+                                <button onclick="printRecord('DOC-01', 'Protección de Patrimonio Familiar corporativo', 'Patrimonio Familiar', '29/05/2026', 'Medio')" class="btn-print">
+                                    <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg> Imprimir
+                                </button>
+                            </td>
+                        </tr>
+
                         <!-- ========================================================================================= -->
                         <!-- 📥 ÁREA DE EDICIÓN: INSERTE AQUÍ NUEVAS FILAS EN LA TABLA (APARTADO 01)                   -->
                         <!-- Copie y pegue el siguiente bloque tantas veces como entradas necesite:                    -->
@@ -673,7 +687,7 @@
                         <!-- ========================================================================================= -->
 
                         <!-- MENSAJE DE TABLA SIN RESULTADOS (ESTADO INICIAL / VACÍO) -->
-                        <tr id="empty-table-row">
+                        <tr id="empty-table-row" style="display: none;">
                             <td colspan="6" style="text-align: center; color: #a0a5b5; padding: 2.5rem;">
                                 No se encontraron registros cargados en el inventario. Use la estructura comentada arriba para añadir filas.
                             </td>
@@ -689,6 +703,20 @@
             <span class="section-tag">APARTADO 02</span>
             <h2 class="section-title">Fichas Resumen Disponibles</h2>
             <div class="grid-repository" id="repository-grid">
+
+                <!-- ENTRADA ACTIVA 01: Vinculación con subcarpeta Patrimonio-Familiar -->
+                <a href="Patrimonio-Familiar/index.html" class="repo-card" data-doc-id="DOC-01">
+                    <div class="repo-header">
+                        <span class="repo-meta-info">ID: DOC-01 &bull; Clasificación: Patrimonio Familiar</span>
+                        <span class="badge-status active">Abrir Ficha</span>
+                    </div>
+                    <h3 class="repo-title">01. Protección de Patrimonio Familiar</h3>
+                    <p class="repo-excerpt">Análisis del marco de protección patrimonial familiar, blindaje corporativo frente a reclamaciones de terceros y estructura operativa de fideicomisos de control familiar.</p>
+                    <div class="repo-footer">
+                        <div>Analista: <span class="repo-author">Maximiliano Aréchiga-Morales</span></div>
+                        <span class="repo-link-action">Ver Reporte Premium</span>
+                    </div>
+                </a>
 
                 <!-- ========================================================================================== -->
                 <!-- 📥 ÁREA DE EDICIÓN: INSERTE AQUÍ NUEVAS TARJETAS DE REPORTE (APARTADO 02)                  -->
@@ -711,7 +739,7 @@
                 <!-- ========================================================================================== -->
 
                 <!-- MENSAJE DE CARDS SIN RESULTADOS (ESTADO INICIAL / VACÍO) -->
-                <div class="empty-repo-state" id="empty-repo-box">
+                <div class="empty-repo-state" id="empty-repo-box" style="display: none;">
                     <p id="empty-message-text">El repositorio está listo. No hay investigaciones cargadas bajo los criterios de búsqueda actuales.</p>
                 </div>
 
