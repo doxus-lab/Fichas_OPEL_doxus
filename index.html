@@ -56,18 +56,16 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
-        .lock-logo-fallback {
-            width: 50px;
-            height: 50px;
-            background-color: #Ffbc06;
-            color: #262a36;
-            font-weight: 900;
-            font-size: 1.8rem;
-            display: inline-flex;
+        .lock-logo-wrapper {
+            margin-bottom: 1.5rem;
+            display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
+        }
+
+        .lock-logo-img {
+            height: 60px;
+            display: block;
         }
 
         .lock-box h2 {
@@ -144,25 +142,21 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo-img {
-            height: 32px;
+            height: 35px;
             display: block;
         }
 
         .logo-fallback {
-            width: 35px;
-            height: 35px;
             background-color: #Ffbc06;
             color: #262a36;
             font-weight: 900;
-            font-size: 1.2rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 0.5rem;
         }
 
         .nav-title {
@@ -513,7 +507,14 @@
     <!-- CAPA DE SEGURIDAD MÁXIMA (CONTRASEÑA: OPEL.1!) -->
     <div id="lock-screen">
         <div class="lock-box">
-            <div class="lock-logo-fallback">D</div>
+            <!-- CONTENEDOR DE LOGOTIPO DE SEGURIDAD -->
+            <div class="lock-logo-wrapper">
+                <!-- Se asume logo.png en la raíz de la carpeta en GitHub -->
+                <img src="logo.png" alt="Doxus Logo" class="lock-logo-img" onerror="this.style.display='none'; document.getElementById('lock-logo-fb').style.display='flex';">
+                
+                <!-- Fallback oficial si no se carga la imagen en GitHub -->
+                <div id="lock-logo-fb" class="logo-fallback" style="display: none; width: 60px; height: 60px; border-radius: 50%; font-size: 2rem;">D</div>
+            </div>
             <h2>Acceso Restringido</h2>
             <p>Sistemas Doxus - Repositorio Normativo de Alta Consultoría</p>
             <input type="password" id="password-input" placeholder="Ingrese la contraseña de seguridad" onkeypress="handleKeyPress(event)">
@@ -525,8 +526,11 @@
     <!-- STICKY NAVIGATION -->
     <nav class="sticky-nav">
         <div class="logo-container">
+            <!-- Espacio dedicado para tu logo desde GitHub -->
             <img src="logo.png" alt="Doxus Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('nav-logo-fb').style.display='flex';">
-            <div id="nav-logo-fb" class="logo-fallback" style="display:none;">D</div>
+            
+            <!-- Fallback oficial Doxus para Barra de Navegación -->
+            <div id="nav-logo-fb" class="logo-fallback" style="display: none; width: 35px; height: 35px; border-radius: 0.5rem; font-size: 1.2rem;">D</div>
             <span class="nav-title">DOXUS DIGITAL LAB</span>
         </div>
         <div class="nav-badge">REPOSITORIO MAESTRO v1.2</div>
@@ -573,12 +577,14 @@
                     <tbody id="table-body">
                         
                         <!-- ========================================================================================= -->
-                        <!-- PLANTILLA DE NUEVA FILA (COPIAR, PEGAR FUERA DEL COMENTARIO Y RELLENAR CON TUS REGISTROS) -->
-                        <!-- 
+                        <!-- 📥 ÁREA DE EDICIÓN: INSERTE AQUÍ NUEVAS FILAS EN LA TABLA (APARTADO 01)                   -->
+                        <!-- Copie y pegue el siguiente bloque tantas veces como entradas necesite:                    -->
+                        <!-- ========================================================================================= -->
+                        <!--
                         <tr>
                             <td class="doc-id">DOC-XX</td>
                             <td>[Título de la Investigación]</td>
-                            <td>[Fecha de Revisión]</td>
+                            <td>[Fecha de Revisión, ej: 29/05/2026]</td>
                             <td>[Riesgo: Bajo / Medio / Alto / Crítico]</td>
                             <td><span class="badge-status active">Vigente / En Carpeta</span></td>
                             <td style="text-align: right;">
@@ -593,7 +599,7 @@
                         <!-- MENSAJE DE TABLA SIN RESULTADOS (ESTADO INICIAL / VACÍO) -->
                         <tr id="empty-table-row">
                             <td colspan="6" style="text-align: center; color: #a0a5b5; padding: 2.5rem;">
-                                No se encontraron registros cargados en el inventario. Use la estructura comentada para añadir filas.
+                                No se encontraron registros cargados en el inventario. Use la estructura comentada arriba para añadir filas.
                             </td>
                         </tr>
 
@@ -609,15 +615,17 @@
             <div class="grid-repository" id="repository-grid">
 
                 <!-- ========================================================================================== -->
-                <!-- PLANTILLA DE CARD (COPIAR, PEGAR FUERA DEL COMENTARIO Y RELLENAR CON TUS REGISTROS)  -->
+                <!-- 📥 ÁREA DE EDICIÓN: INSERTE AQUÍ NUEVAS TARJETAS DE REPORTE (APARTADO 02)                  -->
+                <!-- Copie y pegue el siguiente bloque tantas veces como nuevas fichas deba enlazar:           -->
+                <!-- ========================================================================================== -->
                 <!-- 
                 <a href="[nombre_archivo_secundario].html" class="repo-card" data-doc-id="DOC-XX">
                     <div class="repo-header">
-                        <span class="repo-meta-info">ID: DOC-XX &bull; Clasificación: [Materia]</span>
+                        <span class="repo-meta-info">ID: DOC-XX &bull; Clasificación: [Materia, ej: Laboral / Fiscal]</span>
                         <span class="badge-status active">Abrir Ficha</span>
                     </div>
-                    <h3 class="repo-title">[Número de Entrada]. [Título de la Investigación]</h3>
-                    <p class="repo-excerpt">[Breve descripción o extracto ejecutivo del alcance de esta investigación normativo-legal].</p>
+                    <h3 class="repo-title">[Número]. [Título de la Investigación]</h3>
+                    <p class="repo-excerpt">[Breve descripción o extracto de dos líneas del alcance del reporte].</p>
                     <div class="repo-footer">
                         <div>Analista: <span class="repo-author">Maximiliano Aréchiga-Morales</span></div>
                         <span class="repo-link-action">Ver Reporte Premium</span>
@@ -641,8 +649,11 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Doxus Logo" class="logo-img" style="height: 38.4px;" onerror="this.style.display='none'; document.getElementById('footer-logo-fb').style.display='flex';">
-                    <div id="footer-logo-fb" class="footer-logo-fallback" style="display:none;">D</div>
+                    <!-- Espacio dedicado para el logo en el Footer. El alto es 20% más grande que el Nav (42px) -->
+                    <img src="logo.png" alt="Doxus Logo" class="logo-img" style="height: 42px;" onerror="this.style.display='none'; document.getElementById('footer-logo-fb').style.display='flex';">
+                    
+                    <!-- Fallback oficial Doxus para Footer (+20% de escala) -->
+                    <div id="footer-logo-fb" class="logo-fallback" style="display: none; width: 42px; height: 42px; border-radius: 0.6rem; font-size: 1.4rem;">D</div>
                 </div>
                 <div class="footer-signature">
                     <div class="sig-name">MAXIMILIANO ARÉCHIGA-MORALES</div>
@@ -705,7 +716,6 @@
             // Ajustar visualización del Empty State en la tabla
             const emptyTableRow = document.getElementById('empty-table-row');
             if (emptyTableRow) {
-                // Si la consulta está vacía y no hay elementos físicos, mostramos el empty state original
                 if (tableRows.length === 0) {
                     emptyTableRow.style.display = '';
                 } else {
