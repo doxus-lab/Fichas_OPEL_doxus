@@ -488,6 +488,82 @@
             display: block; /* Visible de forma inicial */
         }
 
+        /* CINTILLO GRUESO FINAL Y UNIFICADO DE MARCA */
+        .bottom-cintillo {
+            background-color: #262a36;
+            padding: 5rem 2rem 4rem 2rem;
+            border-top: 5px solid #Ffbc06;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-container-final {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.2rem;
+        }
+
+        .logo-container-final {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .final-logo-img {
+            height: 65px;
+            display: block;
+        }
+
+        .final-logo-fallback {
+            width: 65px;
+            height: 65px;
+            background-color: #Ffbc06;
+            color: #262a36;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.75rem;
+            font-size: 2rem;
+        }
+
+        .footer-content-final {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            color: #ffffff;
+        }
+
+        .sig-name-final {
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .copyright-final {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #a0a5b5;
+            letter-spacing: 0.5px;
+        }
+
+        .disclaimer-final {
+            font-size: 0.75rem;
+            color: #7a8294;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+
         /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .sticky-nav { padding: 0 1rem; }
@@ -644,25 +720,26 @@
 
     </main>
 
-    <!-- FOOTER PREMIUM -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="logo-container">
-                    <!-- Espacio dedicado para el logo en el Footer. El alto es 20% más grande que el Nav (42px) -->
-                    <img src="logo.png" alt="Doxus Logo" class="logo-img" style="height: 42px;" onerror="this.style.display='none'; document.getElementById('footer-logo-fb').style.display='flex';">
-                    
-                    <!-- Fallback oficial Doxus para Footer (+20% de escala) -->
-                    <div id="footer-logo-fb" class="logo-fallback" style="display: none; width: 42px; height: 42px; border-radius: 0.6rem; font-size: 1.4rem;">D</div>
-                </div>
-                <div class="footer-signature">
-                    <div class="sig-name">MAXIMILIANO ARÉCHIGA-MORALES</div>
-                    <div class="sig-title">ESPECIALISTA EN DIRECCIÓN Y COMPLIANCE CORPORATIVO</div>
-                </div>
+    <!-- CINTILLO GRUESO FINAL Y ÚNICO FOOTER PREMIUM -->
+    <footer class="bottom-cintillo">
+        <div class="footer-container-final">
+            <!-- Único logotipo centrado en tamaño grande -->
+            <div class="logo-container-final">
+                <!-- Espacio limpio para renderizar tu logotipo -->
+                <img src="logo.png" alt="Doxus Logo Final" class="final-logo-img" onerror="this.style.display='none'; document.getElementById('final-logo-fb').style.display='flex';">
+                
+                <!-- Fallback del logotipo en el cintillo -->
+                <div id="final-logo-fb" class="final-logo-fallback" style="display: none;">D</div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; 2026 DOXUS - TODOS LOS DERECHOS RESERVADOS</p>
-                <p class="disclaimer">LA INFORMACIÓN PRESENTADA AQUÍ ES UN RESUMEN GENERAL DE LA OPERACIÓN QUE FUE REFERIDA PARA SU REVISIÓN. SE RECOMIENDA CONSULTAR CADA CONTRATO RELACIONADO Y COMENTAR CON EL PROFESIONISTA DE SU CONFIANZA EL ALCANCE DE LAS DECISIONES.</p>
+
+            <!-- Información consolidada: Firma, Copyright y Disclaimer -->
+            <div class="footer-content-final">
+                <div class="sig-name-final">MAXIMILIANO ARÉCHIGA-MORALES</div>
+                <p class="copyright-final">&copy; 2026 DOXUS - TODOS LOS DERECHOS RESERVADOS</p>
+                <p class="disclaimer-final">
+                    LA INFORMACIÓN PRESENTADA AQUÍ ES UN RESUMEN GENERAL DE LA OPERACIÓN QUE FUE REFERIDA PARA SU REVISIÓN. 
+                    SE RECOMIENDA CONSULTAR CADA CONTRATO RELACIONADO Y COMENTAR CON EL PROFESIONISTA DE SU CONFIANZA EL ALCANCE DE LAS DECISIONES.
+                </p>
             </div>
         </div>
     </footer>
@@ -884,7 +961,7 @@
                     </div>
                     
                     <div class="footer-print-note">
-                        <p style="font-weight: 900; margin-bottom: 0.5rem; text-transform: uppercase; color: #262a36;">MAXIMILIANO ARÉCHIGA-MORALES - COMPLIANCE ESPECIALISTA</p>
+                        <p style="font-weight: 900; margin-bottom: 0.5rem; text-transform: uppercase; color: #262a36;">MAXIMILIANO ARÉCHIGA-MORALES</p>
                         <p>© 2026 DOXUS - TODOS LOS DERECHOS RESERVADOS. LA INFORMACIÓN PRESENTADA AQUÍ ES UN RESUMEN GENERAL DE LA OPERACIÓN QUE FUE REFERIDA PARA SU REVISIÓN. SE RECOMIENDA CONSULTAR CADA CONTRATO RELACIONADO Y COMENTAR CON EL PROFESIONISTA DE SU CONFIANZA EL ALCANCE DE LAS DECISIONES.</p>
                     </div>
                     
